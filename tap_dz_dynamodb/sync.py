@@ -29,6 +29,13 @@ def sync_stream(config, state, stream):
     replication_method = metadata.get(md_map, (), 'replication-method')
     key_properties = metadata.get(md_map, (), 'table-key-properties')
 
+    rmSet = {'FULL_TABLE', 'LOG_BASED'}
+    if not replication_method in rmSet {
+        LOGGER.info('Unknown replication method: %s ', replication_method)
+        replication_method = 'LOG_BASED'
+        LOGGER.info('Setting default replication method: %s ', replication_method)
+    }
+
     # write state message with currently_syncing bookmark
     state = clear_state_on_replication_change(stream, state)
     state = singer.set_currently_syncing(state, table_name)
