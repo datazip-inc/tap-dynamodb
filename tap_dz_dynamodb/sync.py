@@ -32,7 +32,7 @@ def sync_stream(config, state, stream):
     rmSet = {'FULL_TABLE', 'LOG_BASED'}
     if replication_method not in rmSet:
         LOGGER.info('Unknown replication method: %s ', replication_method)
-        replication_method = 'LOG_BASED'
+        replication_method = 'FULL_TABLE'
         LOGGER.info('Setting default replication method: %s ', replication_method)
 
 
