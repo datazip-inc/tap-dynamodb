@@ -30,7 +30,7 @@ def sync_stream(config, state, stream):
     key_properties = metadata.get(md_map, (), 'table-key-properties')
 
     rmSet = {'FULL_TABLE', 'LOG_BASED'}
-    if not replication_method in rmSet {
+    if replication_method not in rmSet {
         LOGGER.info('Unknown replication method: %s ', replication_method)
         replication_method = 'LOG_BASED'
         LOGGER.info('Setting default replication method: %s ', replication_method)
