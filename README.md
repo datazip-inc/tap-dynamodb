@@ -1,5 +1,9 @@
 # dz-dynamodb
 Custom Tap For Datazip
+
+## Sync Supportd 
+  - Full Table
+  - Log Based
 [![CircleCI](https://circleci.com/gh/singer-io/dz-dynamodb.svg?style=svg)](https://circleci.com/gh/singer-io/dz-dynamodb)
 
 This is a [Singer](https://singer.io) tap that produces JSON-formatted data
